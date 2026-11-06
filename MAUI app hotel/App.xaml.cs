@@ -1,26 +1,25 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace MAUI_app_hotel
+﻿namespace MAUI_app_hotel
 {
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
+
+            MainPage = new NavigationPage(new Views.ContratacaoHospedagem());
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
-        }
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            var widow = base.CreateWindow(activationState);
+            var window = base.CreateWindow(activationState);
 
-            Window.WidthProperty = 400;
-            Window.HeightProperty = 600;
+            window.Width = 400;
+            window.Height = 600;
 
-            return widow;
+            return window;
+
+
         }
     }
 }
+        

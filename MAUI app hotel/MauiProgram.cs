@@ -13,6 +13,7 @@ namespace MAUI_app_hotel
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("GermaniaOne-Regular.ttf", "GermaniaOne");
                 });
 
 #if DEBUG
