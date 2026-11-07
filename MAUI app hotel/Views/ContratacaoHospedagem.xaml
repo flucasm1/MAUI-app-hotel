@@ -82,7 +82,7 @@
                     </VerticalStackLayout>
                     
                 </Frame>
-                <Button Text="Avançar"/>
+                <Button Text="Avançar" Clicked="OnAvancarClicked"/>
                 
                 
             </VerticalStackLayout>
