@@ -10,88 +10,98 @@
                          Padding="10"
                          Spacing="10">
 
-        <Label
-        Text="CdD"
-        FontSize="32"
-        FontAttributes="Bold"
-        HorizontalOptions="Center"
-        FontFamily="GermaniaOne"/>
+        <Label Text="CdD"
+               FontSize="32"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               FontFamily="GermaniaOne"/>
 
-        <Label
-        Text="Cálculo da Diária"
-        FontSize="24"
-        HorizontalOptions="Center"
-        FontFamily="GermaniaOne"/>
+        <Label Text="Cálculo da Diária"
+               FontSize="24"
+               HorizontalOptions="Center"
+               FontFamily="GermaniaOne"/>
 
         <Frame Padding="10">
             <VerticalStackLayout>
+
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
-                    <Label Grid.Row="0" Grid.Column="0"
-                           Text="Adultos:" />
 
-                    <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="Orange" 
-                           Text="{Binding Value}" 
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           Text="Adultos:"/>
+
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           TextColor="Orange"
+                           Text="{Binding Value}"
                            BindingContext="{x:Reference stp_adultos}"/>
 
-                    <Stepper Grid.Row="0" Grid.Column="2"
+                    <Stepper Grid.Row="0"
+                             Grid.Column="2"
                              x:Name="stp_adultos"
                              Minimum="0"
                              Maximum="10"
                              Increment="1"/>
 
-                    <Label Grid.Row="1" Grid.Column="0"
-                            Text="Crianças:" />
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           Text="Crianças:"/>
 
-                    <Stepper Grid.Row="1" Grid.Column="2"
-                         x:Name="stp_criancas"
-                         Minimum="0"
-                         Maximum="10"
-                         Increment="1"/>        
-
-
-                    <Label Grid.Row="1" Grid.Column="1"
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
                            TextColor="Orange"
                            Text="{Binding Value}"
                            BindingContext="{x:Reference stp_criancas}"/>
 
-                    
-
-
-                    
-
+                    <Stepper Grid.Row="1"
+                             Grid.Column="2"
+                             x:Name="stp_criancas"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"/>
                 </Grid>
-
-
 
                 <Label Text="Escolha sua Suíte"/>
 
                 <Picker x:Name="pck_quarto"
-                        Title="Selecione sua Acomodação"/>
+                        Title="Selecione sua Acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"/>
 
-                <Frame Padding="10"
-                       Margin="10">
+                <Frame Padding="10" Margin="10">
                     <VerticalStackLayout>
+
                         <Label Text="Período da Estadia"/>
-                            <HorizontalStackLayout>
-                                <Label Text="Check-in"/>
+
+                        <HorizontalStackLayout>
+
+                            <Label Text="Check-in"/>
+
                             <DatePicker x:Name="dtpck_checkin"
-                                            Format="dd/MM/yyyy"/>
+                                        DateSelected="dtpck_checkin_DateSelected"
+                                        Format="dd/MM/yyyy"/>
+
+                            <Label Text="Check-out"/>
+
+                            <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy"/>
+
                         </HorizontalStackLayout>
+
                     </VerticalStackLayout>
-                    
                 </Frame>
-                <Button Text="Avançar" Clicked="OnAvancarClicked"/>
-                
-                
+
+                <Button Text="Avançar"
+                        Clicked="OnAvancarClicked"/>
+
             </VerticalStackLayout>
         </Frame>
-        <Button
-            Text="Sobre"
-            Clicked="OnSobreClicked"
-            BackgroundColor="Orange"
-            TextColor="Black" />    
+
+        <Button Text="Sobre"
+                Clicked="OnSobreClicked"
+                BackgroundColor="Orange"
+                TextColor="Black"/>
+
     </VerticalStackLayout>
-    
+
 </ContentPage>
